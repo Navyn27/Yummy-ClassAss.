@@ -1,8 +1,9 @@
-import './App.css';
+import Landing from "./home";
 
 function App() {
   return (
-    <div className="App">
+    <div className="w-[100vw] h-full bg-black ">
+      <Landing />
     </div>
   );
 }
