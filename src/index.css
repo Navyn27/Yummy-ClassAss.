@@ -1,3 +1,11 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&family=Oleo+Script+Swash+Caps&family=Poppins:wght@300&display=swap');
+
+
+@layer base {
+    *{
+        font-family: 'Montserrat', sans-serif;
+    }
+}
