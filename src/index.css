@@ -1,9 +1,32 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+<<<<<<< HEAD
 
 .footer {
   background-image: url("./assets/bg.svg");
   background-repeat: no-repeat;
   background-size: cover;
+=======
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@700&family=Oleo+Script+Swash+Caps&family=Poppins:wght@300&family=Quantico:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&family=Oleo+Script+Swash+Caps&family=Poppins:wght@300&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;600;700&family=Oleo+Script+Swash+Caps&family=Poppins:wght@300&display=swap'); */
+
+@layer base {
+    *{
+        font-family: 'Montserrat', sans-serif;
+    }
+}
+
+.SidebarComponent:hover b, .SidebarComponent:hover div {
+    color: black;
+    transition: .2s ease-in;
+    padding: 1px
+}
+.SidebarComponent:hover {
+    background: white;
+    transition: .2s ease-in-out;
+    padding: 1rem;
+    cursor: pointer;
+>>>>>>> d6d9c713db73a65869b836274e97d26bd5749a54
 }
