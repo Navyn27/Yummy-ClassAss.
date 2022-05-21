@@ -9,7 +9,7 @@ import { CgProfile } from 'react-icons/cg'
 
 import Sidebarcomponent from './Sidebarcomponent'
 
-function NavBar() {
+function Sidebar() {
 
   const sidebarComponentsData1 = [
     {
@@ -43,7 +43,7 @@ function NavBar() {
 
 
   const sidebarComponents1 = sidebarComponentsData1.map((sidebarcomponentData, index)=>{
-    return <Sidebarcomponent key={index} icon={sidebarcomponentData.icon} name={sidebarcomponentData.content} />
+    return <Sidebarcomponent key={index} icon={sidebarcomponentData.icon} name={sidebarcomponentData.content} link={sidebarcomponentData.content} />
   })
 
   const sidebarComponents2 = sidebarComponentsData2.map((sidebarcomponentData, index)=>{
@@ -52,7 +52,7 @@ function NavBar() {
 
 
   return (
-    <div className='w-[25rem] h-full bg-myred flex flex-col items-center justify-between '>
+    <div className='w-[25rem] h-[100vh] bg-myred flex flex-col items-center justify-between fixed z-[1] '>
       <div className='w-full h-[50%] flex flex-col items-center justify-around '>
         <div className='logo w-[15rem] h-fit flex items-center justify-start '>
             <img src={logo} alt="logo" />
@@ -68,4 +68,4 @@ function NavBar() {
   )
 }
 
-export default NavBar
+export default Sidebar;
