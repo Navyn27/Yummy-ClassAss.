@@ -6,6 +6,7 @@ module.exports = {
     backgroundColor: {
       myred: "rgb(245, 71, 73)",
 <<<<<<< HEAD
+<<<<<<< HEAD
     },
     extend: {
       borderRadius: "30px",
@@ -18,6 +19,8 @@ module.exports = {
   },
 };
 =======
+=======
+>>>>>>> d6d9c713db73a65869b836274e97d26bd5749a54
       lightYellow: 'rgb(255, 251, 238)',
       lightYellow1: 'rgb(255, 253, 247)',
       lightBlue: 'rgb(245, 247, 253)',
