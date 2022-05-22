@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import logo from './../assets/logo.png'
 import { SiAirtable } from 'react-icons/si'
 import { FaFirstOrder } from 'react-icons/fa'
@@ -7,7 +7,6 @@ import { HiViewGrid } from 'react-icons/hi'
 import { MdDarkMode, MdLightMode } from 'react-icons/md'
 import { CgProfile } from 'react-icons/cg'
 import useDarkMode from '../Hooks/useDarkMode'
-import { Link } from 'react-router-dom'
 
 import Sidebarcomponent from './Sidebarcomponent'
 
@@ -34,8 +33,27 @@ function Sidebar() {
     },
   ]
 
+  const sidebarComponentsData2 = [
+    {
+      icon: theme === 'dark' ? <MdDarkMode  /> : <MdLightMode />,
+      content: theme === 'dark' ? 'Darkmode' : 'Lightmode'
+    },
+    {
+      icon: <CgProfile />,
+      content: 'Profile'
+    }
+  ]
+
+  function handleTheme(){
+    setTheme(theme)
+  }
+
   const sidebarComponents1 = sidebarComponentsData1.map((sidebarcomponentData, index)=>{
     return <Sidebarcomponent key={index} icon={sidebarcomponentData.icon} name={sidebarcomponentData.content} link={sidebarcomponentData.content}  />
+  })
+
+  const sidebarComponents2 = sidebarComponentsData2.map((sidebarcomponentData, index)=>{
+    return <Sidebarcomponent key={index} icon={sidebarcomponentData.icon} name={sidebarcomponentData.content} link={sidebarcomponentData.content} handleTheme={handleTheme} />
   })
 
   return (
@@ -49,16 +67,7 @@ function Sidebar() {
         </div>
       </div>
       <div className='w-full h-[20%]  flex flex-col items-center justify-center gap-[2rem]'>
-        <div className='SidebarComponent w-[15rem] h-[3rem] flex items-center justify-start gap-[1rem] rounded-[.2rem]'>
-            <div className='text-[white] text-3xl font-bold'>{theme === 'dark' ? <MdDarkMode onClick={()=>setTheme(theme)}  /> : <MdLightMode onClick={()=>setTheme(theme)} />}</div>
-            <b className='text-[white]'>{theme === 'dark' ? 'Darkmode' : 'Lightmode'}</b>
-        </div>
-        <Link to='/profile'>
-          <div className='SidebarComponent w-[15rem] h-[3rem] flex items-center justify-start gap-[1rem] rounded-[.2rem]'>
-              <div className='text-[white] text-3xl font-bold'><CgProfile /></div>
-              <b className='text-[white]'>Profile</b>
-          </div>
-        </Link>
+        {sidebarComponents2}
       </div>
     </div>
   )
