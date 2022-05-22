@@ -1,5 +1,5 @@
 import React from "react";
-import vector from "../images/Vector.png"
+import vector from "../assets/Vector.png"
 
 const Vector = () => {
     return(

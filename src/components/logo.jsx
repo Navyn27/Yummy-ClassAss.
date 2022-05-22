@@ -1,5 +1,5 @@
 import React from 'react';
-import logo from '../images/yummy-logo2.png'
+import logo from '../assets/yummy-logo2.png'
 import './style.css'
 
 const Logo = (props) => {

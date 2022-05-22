@@ -1,12 +1,13 @@
 import React from 'react'
 import './style.css'
 // import Vector from "./vector";
-import User from '../images/user.png'
+import User from '../assets/user.png'
 import Logo from './logo'
-import vector from '../images/Vector.png';
+import vector from '../assets/Vector.png';
 import Pill from './pill'
 import Button from './button'
 // import Vector from "./vector";;
+import { Link } from 'react-router-dom';
 
 function Form3() {
   return (
@@ -20,21 +21,27 @@ function Form3() {
           </div>
               <div className='side1'>
               <div className='sidechick1'>
-              <button className='circle0 circle7'>
-                1
-              </button>
+              <Link to='/register'>
+            <button className='circle0 circle7'>
+            1
+          </button>
+            </Link>
               <span>Restaurant Info</span>
               </div>
               <div className='sidechick1'>
-              <button className='circle0 circle8'>
-                2
-              </button>
+              <Link to='/register2'>
+            <button className='circle0 circle8'>
+            2
+          </button>
+          </Link>
               <span>Restaurant Type & Timings</span>
               </div>
               <div className='sidechick1'>
-              <button className='circle0 circle9'>
-                3
-              </button>
+              <Link to='/register3'>
+            <button className='circle0 circle9'>
+            3
+          </button>
+          </Link>
               <span>Create your menu</span>
               </div>
           </div>

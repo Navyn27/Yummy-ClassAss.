@@ -1,7 +1,8 @@
 import React from 'react'
 import Vector from "./vector";
-import User from '../images/user.png'
+import User from '../assets/user.png'
 import Logo from './logo'
+import { Link } from 'react-router-dom';
 
 function Form() {
   return (
@@ -15,21 +16,27 @@ function Form() {
           </div>
               <div className='side'>
               <div className='sidechick'>
-              <button className='circle circle1'>
-                1
-              </button>
+              <Link to='/register'>
+            <button className='circle circle1'>
+            1
+          </button>
+          </Link>
               <span>Restaurant Info</span>
               </div>
               <div className='sidechick'>
-              <button className='circle circle2'>
-                2
-              </button>
+              <Link to='/register2'>
+            <button className='circle circle2'>
+            2
+          </button>
+          </Link>
               <span>Restaurant Type & Timings</span>
               </div>
               <div className='sidechick'>
-              <button className='circle circle2'>
-                3
-              </button>
+              <Link to='/register3'>
+            <button className='circle circle3'>
+            3
+          </button>
+          </Link>
               <span>Create your menu</span>
               </div>
           </div>
