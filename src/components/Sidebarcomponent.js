@@ -1,11 +1,15 @@
 import React from 'react'
+import {Link } from 'react-router-dom'
 
 function Sidebarcomponent(props) {
+  console.log(props.link)
   return (
-    <div className='w-[20rem] h-fit flex items-center justify-start gap-[1rem]'>
-        <div className='text-white text-3xl font-bold'>{props.icon}</div>
-        <b className='text-white text-xl'>{props.name}</b>
-    </div>
+    <Link to={`/${props.link}`}>
+      <div className='SidebarComponent w-[15rem] h-[3rem] flex items-center justify-start gap-[1rem] rounded-[.2rem]'>
+          <div className='text-[white] text-3xl font-bold'>{props.icon}</div>
+          <b className='text-[white]'>{props.name}</b>
+      </div>
+    </Link>
   )
 }
 

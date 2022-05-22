@@ -1,86 +1,99 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Drink from './DrinkComponent';
 import Menucomponent from './Menucomponent';
-
-import Rightbar from './Rightbar';
+import NewOrder from './NewOrder';
+import newOrderData from './NewOrderData';
 import {AiOutlineArrowRight} from 'react-icons/ai';
-import Rye from '../assets/rye.webp';
-import Beer from '../assets/beer.jpg';
-import Fanta from '../assets/fanta.jpg';
-import Scotch from '../assets/Scotch.jpg';
-import Vodka from '../assets/Vodka.jpg';
-import Hennesy from '../assets/Hennesy.jpg';
-import Winne from '../assets/red-wine-glass.jpg'
-
+import Navbar from './Navbar';
 
 function Menu() {
+
+  const drinksData = [
+    {
+      img: '../../assets/rye.webp',
+      name: 'Red wine',
+      money: 20000
+    },
+    {
+      img: '../../assets/beer.jpg',
+      name: 'Rye',
+      money: 20000
+    },
+    {
+      img: '../../assets/fanta.jpg',
+      name: 'beer',
+      money: 20000
+    },
+    {
+      img: '../../assets/Scotch.jpg',
+      name: 'Fanta',
+      money: 20000
+    },
+    {
+      img: '../../assets/Hennesy.jpg',
+      name: 'Scotch',
+      money: 20000
+    },
+    {
+      img: '../../assets/red-wine-glass.jpg',
+      name: 'Hennesy',
+      money: 20000
+    },
+  ]
+
+  const [newOrderDatas, setNewOrder] = useState(newOrderData)
+
+    const handleClicked = (id) =>{
+        setNewOrder(prevNewOrder=>{
+            return prevNewOrder.map(order=>{
+                if(order.checked === true) {
+                    return {...order, checked: false}
+                }
+                return order.id === id ?  {...order, checked: !order.checked} : order
+            })
+        })
+    }
+
+  const orders = newOrderDatas.map((newData, index)=>{
+    return <NewOrder key={index} name={newData.name} checked={newData.checked} id={newData.id} handleClicked={handleClicked} />
+  })
+
+  const menuComponentsData = [{name: 'Drinks'}, {name: 'Fruits'}, {name: 'Beer'}, {name: 'Appetiser'}, {name: 'Main'}]
+
+  const menuComponents = menuComponentsData.map((menuComponentData, index)=>{
+    return <Menucomponent key={index} name={menuComponentData.name} />
+  })
+
+  const drinks = drinksData.map((drinkData, index)=>{
+    return <Drink key={index} name={drinkData.name} img={drinkData.img} money={drinkData.money} />
+  })
+
   return (
-    <div className='w-[140em] h-[65rem]   rounded-xl shadow-2xl  p-10 mr-[20rem] mt-[5rem]'>
-        <div className='mt-10 ml-5'>
-            <strong className='font-bold text-xl mt-20'>Menus</strong>
-            <br/>
-            <span  className='text-sm'>05 of May 2022,09:41pm</span>
+    <div className='h-fit w-[95rem] rounded-xl shadow-2xl mt-[5rem] absolute right-0 flex flex-col gap-[2rem]'>
+        <div className='mt-10 ml-5 flex flex-col items-start justify-center'>
+            <Navbar name='Menus' />
+            <span className='text-sm font-bold ml-[5rem] mt-[-2rem]'>05 of May 2022,09:41pm</span>
         </div>
-<br/>
-       <div className='flex items-center justify-center gap-[1rem]'>
-        <Menucomponent name='Drinks' className ="text-white"/>  
-        <Menucomponent name='Fruits'/>  
-        <Menucomponent  name='Beer'/>
-        <Menucomponent name='Appetiser'/> 
-        <Menucomponent name='Main'/>
-       </div>
-       <br/>
-        
-        <div className='flex'>
-        <div className='flex flex-col justify-center gap-[1.4rem] '>
-                <Drink
-            img= {Winne}
-            name="Red wine"
-            money="20,000Rwf"
-            />
 
-            <Drink
-            img= {Rye}
-            name="Rye"
-            money="15,000Rwf"
-            />
-
-            <Drink
-            img= {Scotch}
-            name="Scotch"
-            money="14,000Rwf"
-            />
-
-            <Drink
-            img= {Vodka}
-            name="Vodka"
-            money="10,000Rwf"
-            />
-            <Drink
-            img= {Hennesy}
-            name="Hennesy"
-            money="20,000Rwf"
-            />
-
-            <Drink
-            img= {Beer}
-            name="Beer"
-            money="8,000Rwf"
-            /> 
-
-            <Drink
-            img= {Fanta}
-            name="Fanta"
-            money="3,000Rwf"
-            />
-            <span className='flex text-[#ffff00dc] font-bold text-xl ml-[12rem]' >More <AiOutlineArrowRight className='pt-[0.5rem] text-2xl'/></span> 
-        </div> 
-        
-         <div className=' p-20'>
-         <Rightbar/>
+       <div className='flex items-center'>
+         <div className='flex flex-col items-start justify-center gap-[4rem]'>
+          <div className='flex items-center justify-center gap-[1rem]'>
+              {menuComponents}
+            </div>
+            <div className='flex flex-col justify-center gap-[1.4rem] '>
+                    {drinks}
+                    <span className='flex text-yellow font-bold text-xl ml-[12rem]' >More <AiOutlineArrowRight className='pt-[0.5rem] text-2xl'/></span> 
+              </div>
          </div>
-           
-           
+         <div className='w-fit h-fit flex flex-col items-center justify-center gap-[2rem] p-[2rem]'>
+         {orders}
+         </div>
+       </div>
+
+        <div className='flex'>       
+         <div className=' p-20'>
+         
+         </div>
         </div>
     </div>
   );
