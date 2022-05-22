@@ -10,7 +10,7 @@ import { useState, useEffect } from 'react'
 
 //  importing icons
 
-import { IoAddCircleOutline } from 'react-icons/io5'
+import { IoIosAddCircle } from 'react-icons/io'
 import { IoMdRemoveCircle } from 'react-icons/io'
 function Main() {
     const [clientViewDatas, setclientViewDatas] = useState([
@@ -59,7 +59,7 @@ function Main() {
       <div className='w-[95%] h-fit flex flex-col items-center justify-start gap-[4rem] '>
         <div className='h-fit w-fit p-2 flex items-center justify-center gap-[2rem]'>
             <b>Add a client</b>
-            <IoAddCircleOutline className='text-myred' onClick={showNewResto} />
+            <IoIosAddCircle className='text-myred' onClick={showNewResto} />
         </div>
         <div className='w-[80%] h-full'>
             <Chart1 />
