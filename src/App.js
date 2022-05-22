@@ -14,12 +14,10 @@ function App() {
     <div>
       <Routes >
         
-      {/* <Switch> */}
       <Route path="/register" element={<Form />}/>
       <Route path="/register2" element={<Form2 />}/>
       <Route path="/register3" element={<Form3/>}/>
       </Routes>
-      {/* </Switch> */}
     </div>
     </BrowserRouter>
 
@@ -27,4 +25,3 @@ function App() {
 }
 
 export default App;
- 
