@@ -6,7 +6,7 @@ function Drink({img, name,money}) {
       <img src={`../assets/${img}`} alt="img" className='w-[4rem] h-[4rem] rounded-full ' />
       <div>
         <h3 className='text-red-500 text-xl font-bold'>{name}</h3>
-        <span className='text-yellow font-bold text-sm'>{money} frw</span>
+        <span className='text-myred font-bold text-sm'>{money} frw</span>
       </div>
     </div>
   );
