@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import logo from './../assets/logo.png'
 import { SiAirtable } from 'react-icons/si'
 import { FaFirstOrder } from 'react-icons/fa'
