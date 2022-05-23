@@ -5,6 +5,7 @@ module.exports = {
   theme: {
     backgroundColor: {
       myred: "rgb(245, 71, 73)",
+      lightBlue1: "#DFE6F5",
       lightYellow: 'rgb(255, 251, 238)',
       lightYellow1: 'rgb(255, 253, 247)',
       lightBlue: 'rgb(245, 247, 253)',

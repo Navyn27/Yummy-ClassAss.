@@ -1,10 +1,9 @@
 import React, { useState } from 'react'
-import logo from './../assets/logo.png'
+import logo from './../logo.png'
 import { SiAirtable } from 'react-icons/si'
 import { FaFirstOrder } from 'react-icons/fa'
-import { MdOutlineViewInAr } from 'react-icons/md'
+import { MdOutlineViewInAr, MdLightMode, MdDarkMode } from 'react-icons/md'
 import { HiViewGrid } from 'react-icons/hi'
-import { MdDarkMode, MdLightMode } from 'react-icons/md'
 import { CgProfile } from 'react-icons/cg'
 import useDarkMode from '../Hooks/useDarkMode'
 
@@ -13,7 +12,6 @@ import Sidebarcomponent from './Sidebarcomponent'
 function Sidebar() {
 
   const [theme, setTheme] = useDarkMode()
-
   const sidebarComponentsData1 = [
     {
       icon: <HiViewGrid />,
@@ -49,7 +47,7 @@ function Sidebar() {
   }
 
   const sidebarComponents1 = sidebarComponentsData1.map((sidebarcomponentData, index)=>{
-    return <Sidebarcomponent key={index} icon={sidebarcomponentData.icon} name={sidebarcomponentData.content} link={sidebarcomponentData.content}  />
+    return <Sidebarcomponent key={index} icon={sidebarcomponentData.icon} name={sidebarcomponentData.content} link={sidebarcomponentData.content} />
   })
 
   const sidebarComponents2 = sidebarComponentsData2.map((sidebarcomponentData, index)=>{
@@ -57,7 +55,7 @@ function Sidebar() {
   })
 
   return (
-    <div className='w-[25rem] h-[100vh] bg-myred dark:bg-[orange] flex flex-col items-center justify-between fixed z-[1] '>
+    <div className='w-[25rem] h-[100vh] bg-myred flex flex-col items-center justify-between fixed z-[1] '>
       <div className='w-full h-[50%] flex flex-col items-center justify-around '>
         <div className='logo w-[15rem] h-fit flex items-center justify-start '>
             <img src={logo} alt="logo" />

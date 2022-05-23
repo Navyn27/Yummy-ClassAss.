@@ -51,7 +51,7 @@ function Main() {
 
   return (
     <div className='h-fit w-[95rem] flex flex-col items-center justify-center gap-[5rem] absolute right-0  '>
-      <Navbar />
+      <Navbar  name='Overview' />
       {addState && <div className='w-[80%] h-[100vh] fixed bg-[#00000052] flex flex-col gap-[2rem] top-0 items-center justify-center' style={{display: addState ? 'flex' : 'none' }}>
                 <IoMdRemoveCircle onClick={showNewResto} className='absolute top-[25%] right-[35%]' />
                 {newResto}
