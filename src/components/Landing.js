@@ -1,13 +1,28 @@
+import { useState } from "react";
+import { useEffect } from "react";
+
 import React from "react";
-import logo from "./assets/Group 66.png";
-import img from "./assets/man.png";
-import Main from "./about";
+import logo from "../assets/Group 66.png";
+import img from "../assets/man.png";
+import Main from "./AboutUs";
 import Footer from "./footer";
 
-import arun from "./assets/arun.jpg";
-import marques from "./assets/marques.jpg";
+import arun from "../assets/arun.jpg";
+import marques from "../assets/marques.jpg";
 
 const Landing = () => {
+  const [width, setWidth] = useState(false);
+
+  useEffect(() => {
+    window.addEventListener("resize", () => {
+      window.innerWidth <= 1343 ? setWidth(true) : setWidth(false);
+    });
+  });
+
+  useEffect(() => {
+    window.innerWidth <= 1343 && setWidth(true);
+  }, []);
+
   return (
     <div
       style={{ background: `linear-gradient(to bottom,#FFDFE1,white)` }}
@@ -70,14 +85,16 @@ const Landing = () => {
           </div>
         </div>
       </div>
-      <div className="top-auto right-20">
-        <img
-          className="absolute w-[40rem]
+      {!width && (
+        <div className="top-auto right-20">
+          <img
+            className="absolute max-w-[40rem]
              float-right top-[30px] right-20"
-          src={img}
-          alt=""
-        ></img>
-      </div>
+            src={img}
+            alt=""
+          ></img>
+        </div>
+      )}
       <Main />
       <Footer />
     </div>

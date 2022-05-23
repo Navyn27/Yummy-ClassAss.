@@ -1,14 +1,12 @@
-import Landing from "./home";
-import './App.css';
-import Dashboard from './components/Dashboard';
+import Landing from "./components/Landing";
+import "./App.css";
+import Dashboard from "./components/Dashboard";
 
 function App() {
   return (
-   <div>
-    <div className="w-full h-full bg-black ">
-      <Dashboard />
+    <div>
+      <Landing />
     </div>
-   </div>
   );
 }
 
