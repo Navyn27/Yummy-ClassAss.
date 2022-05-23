@@ -1,11 +1,30 @@
+// @import url('https://fonts.googleapis.com/css2?family=Goudy+Bookletter+1911&family=Quicksand:wght@500&family=Signika+Negative:wght@300&family=Yrsa:wght@300&display=swap');
+
 module.exports = {
-  content: [
-    "./src/**/*.{js,jsx,ts,tsx}",
-  ],
+  content: ["./src/**/*.{js,jsx,ts,tsx}"],
   theme: {
     backgroundColor: {
       myred: "rgb(245, 71, 73)",
+<<<<<<< HEAD
       lightBlue1: "#DFE6F5",
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+    },
+    extend: {
+      borderRadius: "30px",
+      fontFamily: {
+        quicksand: ["Quicksand", "sans-serif"],
+        poppins: ["Poppins", "sans-serif"],
+      },
+    },
+    plugins: [],
+  },
+};
+=======
+=======
+>>>>>>> d6d9c713db73a65869b836274e97d26bd5749a54
+>>>>>>> 9892f8fd48b8f0082c6213bdef7324822ee22013
       lightYellow: 'rgb(255, 251, 238)',
       lightYellow1: 'rgb(255, 253, 247)',
       lightBlue: 'rgb(245, 247, 253)',
@@ -25,3 +44,7 @@ module.exports = {
     plugins: [],
   } 
 }
+<<<<<<< HEAD
+=======
+>>>>>>> d6d9c713db73a65869b836274e97d26bd5749a54
+>>>>>>> 9892f8fd48b8f0082c6213bdef7324822ee22013
