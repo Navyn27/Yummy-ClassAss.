@@ -6,6 +6,7 @@ import logo from "../assets/Group 66.png";
 import img from "../assets/man.png";
 import Main from "./AboutUs";
 import Footer from "./footer";
+import Zoom from "react-reveal/Zoom";
 
 import arun from "../assets/arun.jpg";
 import marques from "../assets/marques.jpg";
@@ -87,12 +88,14 @@ const Landing = () => {
       </div>
       {!width && (
         <div className="top-auto right-20">
-          <img
-            className="absolute max-w-[40rem]
+          <Zoom duration={700}>
+            <img
+              className="absolute max-w-[40rem]
              float-right top-[30px] right-20"
-            src={img}
-            alt=""
-          ></img>
+              src={img}
+              alt=""
+            ></img>
+          </Zoom>
         </div>
       )}
       <Main />

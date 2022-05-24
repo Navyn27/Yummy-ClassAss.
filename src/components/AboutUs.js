@@ -7,7 +7,7 @@ const images = [easy, fast, money];
 
 const Main = () => {
   return (
-    <div className=" w-full mr-50 ml-50 mt-40 grid place-items-center grid-cols-3">
+    <div className="abouts w-full mr-50 ml-50 mt-40 grid place-items-center grid-cols-3">
       <div className="h-110 w-[370px] grid place-items-center bg-[aliceblue] rounded-[20px]">
         <img className="w-[400px]" src={images[0]} alt="" />
         <h3 className="text-[#F54749] font-semibold text-2xl">Easy to use</h3>

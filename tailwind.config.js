@@ -6,6 +6,11 @@ module.exports = {
     backgroundColor: {
       myred: "rgb(245, 71, 73)",
       lightBlue1: "#DFE6F5",
+      lightYellow: "rgb(255, 251, 238)",
+      lightYellow1: "rgb(255, 253, 247)",
+      lightBlue: "rgb(245, 247, 253)",
+      lightRed: "#FFE7E7",
+      btnYellow: "#FFEAA0",
     },
     extend: {
       borderRadius: "30px",
@@ -15,14 +20,6 @@ module.exports = {
       },
     },
     plugins: [],
-  },
-
-  borders: {
-    lightYellow: "rgb(255, 251, 238)",
-    lightYellow1: "rgb(255, 253, 247)",
-    lightBlue: "rgb(245, 247, 253)",
-    lightRed: "#FFE7E7",
-    btnYellow: "#FFEAA0",
   },
   colors: {
     myred: "rgb(245, 71, 73)",
