@@ -3,6 +3,7 @@ import Navbar from './Navbar'
 import StatusCard from './StatusCard'
 import NewOrder from './NewOrder'
 import Order from './Order'
+import newOrderDatas from './NewOrderData'
 
 import { useState } from 'react'
 
@@ -13,7 +14,7 @@ function Main2() {
         return <StatusCard key={index} statusName={statusCardData.statusName} statusValue={statusCardData.statusValue} />
     })
 
-    const [newOrderData, setNewOrder] = useState([{name: 'Dessert', checked: false, id: 1}, {name: 'Main', checked: false, id: 2}, {name: 'Drink', checked: true, id: 3}, {name: 'Appetizer', checked: false, id: 4}, {name: 'starter', checked: false, id: 5}])
+    const [newOrderData, setNewOrder] = useState(newOrderDatas)
 
     const handleClicked = (id) =>{
         setNewOrder(prevNewOrder=>{
@@ -47,7 +48,7 @@ function Main2() {
 
   return (
     <div className='h-[100rem] w-[95rem] flex flex-col items-center gap-[2rem] absolute right-0 '>
-      <Navbar />
+      <Navbar name='Orders' />
       <div className='w-[90%] h-[100rem] flex justify-between gap-[2rem] '>
         <div className='w-[90%] h-full flex flex-col justify-center  gap-[5rem] '>
             <div className='w-[95%] h-[5rem] flex items-center '>
