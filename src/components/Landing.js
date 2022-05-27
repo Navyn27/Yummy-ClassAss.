@@ -28,7 +28,7 @@ const Landing = () => {
     <div
       style={{ background: `linear-gradient(to bottom,#FFDFE1,white)` }}
       className="top h-[46rem]"
-    >
+    > 
       <div>
         <header className="h-[12rem] w-[30rem] flex justify-center items-center">
           <img src={logo} className="logo" alt="Logo" />
