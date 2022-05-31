@@ -10,9 +10,9 @@ import Landing from "./components/Landing";
 import Signup from './components/SignUps/Signup'
 import Login from './components/SignUps/Login'
 import PageNotFound from './components/SignUps/PageNotFound'
-import CircularProgress from 'react-spinners/CircleLoader'
+import logo from './assets/yummy.png'
 import { useState, useEffect } from 'react'
-
+import Fade from 'react-reveal/Fade'
 function App() {
 
   const [loading, setLoading] = useState(false)
@@ -22,7 +22,7 @@ function App() {
 
     setTimeout(()=>{
       setLoading(false)
-    }, 2000)
+    }, 1000)
   }, [])
 
 
@@ -35,7 +35,11 @@ function App() {
     <div className="App">
     {
       loading ?
-      <CircularProgress size={50} />
+        <div className='w-screen h-screen flex items-center justify-center '>
+          <Fade duration={300}>
+            <img className='logo' src={logo} alt="logo" width='300px' />
+          </Fade>
+        </div>
       :
       <Routes>
         <Route path="/" element={<Landing />} />

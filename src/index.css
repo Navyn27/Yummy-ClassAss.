@@ -34,3 +34,12 @@ body {
   padding: 1rem;
   cursor: pointer;
 }
+
+@keyframes logo-animed {
+  from {
+    width: 0px
+  }
+  to{
+    width: 300px
+  }
+}
