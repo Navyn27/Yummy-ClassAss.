@@ -13,7 +13,7 @@ function Order(props) {
 
   console.log(customerType)
   return (
-    <div className='w-[60rem] h-[8rem] bg-lightYellow1 flex items-center justify-center gap-[2rem] ' style={{boxShadow: '4px 10px 8px rgba(160, 146, 146, 0.17)'}}>
+    <div className='w-[60rem] h-[8rem] bg-lightYellow1 flex items-center justify-center gap-[2rem] hover:scale-[1.01] hover:transition-ease duration-200 ' style={{boxShadow: '4px 10px 8px rgba(160, 146, 146, 0.17)'}}>
       <div className='w-[20%] h-full flex items-center justify-center '>
         <b className='text-myred font-bold'>{name}</b>
       </div>

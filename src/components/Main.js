@@ -5,6 +5,7 @@ import Chart from './Chart'
 import Cscard from './Cscard'
 import StatusCard from './StatusCard'
 import NewResto from './New_Resto'
+import Zoom from 'react-reveal/Zoom'
 
 import { useState } from 'react'
 
@@ -69,7 +70,9 @@ function Main() {
       </div>
       <div className='w-[90%] h-[100rem] flex justify-between gap-2 '>
         <div className='bg-[blue w-[70%] h-full flex flex-col items-center justify-center gap-[2rem] '>
-            <Chart />
+            <Zoom>
+                <Chart />
+            </Zoom>
             <div className='w-full h-[40rem] bg-lightBlue grid grid-cols-2 gap-x-[.5rem] place-items-center gap-y-[.5rem] '>
                 {clientCards}
             </div>
@@ -96,4 +99,3 @@ function Main() {
 }
 
 export default Main
- 

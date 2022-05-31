@@ -53,13 +53,13 @@ function Main() {
     <div className='h-fit w-[95rem] flex flex-col items-center justify-center gap-[5rem] absolute right-0  '>
       <Navbar  name='Overview' />
       {addState && <div className='w-[80%] h-[100vh] fixed bg-[#00000052] flex flex-col gap-[2rem] top-0 items-center justify-center' style={{display: addState ? 'flex' : 'none' }}>
-                <IoMdRemoveCircle onClick={showNewResto} className='absolute top-[25%] right-[35%]' />
+                <IoMdRemoveCircle onClick={showNewResto} className='absolute top-[25%] right-[35%] text-[red]' />
                 {newResto}
       </div>}
       <div className='w-[95%] h-fit flex flex-col items-center justify-start gap-[4rem] '>
         <div className='h-fit w-fit p-2 flex items-center justify-center gap-[2rem]'>
             <b>Add a client</b>
-            <IoIosAddCircle className='text-myred' onClick={showNewResto} />
+            <IoIosAddCircle className='text-[red]' onClick={showNewResto} />
         </div>
         <div className='w-[80%] h-full'>
             <Chart1 />

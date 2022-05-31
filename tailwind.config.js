@@ -11,6 +11,8 @@ module.exports = {
       lightBlue: "rgb(245, 247, 253)",
       lightRed: "#FFE7E7",
       btnYellow: "#FFEAA0",
+      navYellow: "#F0BF12"
+
     },
     extend: {
       borderRadius: "30px",
@@ -18,15 +20,17 @@ module.exports = {
         quicksand: ["Quicksand", "sans-serif"],
         poppins: ["Poppins", "sans-serif"],
       },
+      colors: {
+        myred: "rgb(245, 71, 73)",
+        yellow: "rgb(255, 210, 51)",
+        oYellow: "rgb(255, 199, 0)",
+        lightYellow: "rgb(255, 253, 247)",
+        navYellow: "#F0BF12"
+  },
     },
     plugins: [],
   },
-  colors: {
-    myred: "rgb(245, 71, 73)",
-    yellow: "rgb(255, 210, 51)",
-    oYellow: "rgb(255, 199, 0)",
-    lightYellow: "rgb(255, 253, 247)",
-  },
+  
   boxShadow: {
     priceshadow: "box-shadow: 4px 10px 8px rgba(160, 146, 146, 0.17)",
   },
