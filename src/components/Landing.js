@@ -2,13 +2,13 @@ import { useState } from "react";
 import { useEffect } from "react";
 
 import React from "react";
-import logo from "../assets/Group 66.png";
+import logo from "../assets/yummy.png";
 import img from "../assets/man.png";
 import AboutUs from "./AboutUs";
 import Footer from "./footer";
 import Zoom from "react-reveal/Zoom";
 import Fade from 'react-reveal/Fade';
-import { Link } from 'react-router-dom'
+import { Link } from "react-router-dom";
 import arun from "../assets/arun.jpg";
 import marques from "../assets/marques.jpg";
 
@@ -32,8 +32,8 @@ const Landing = () => {
     > 
       <div className='w-[100%] h-fit flex flex-col '>
         <Fade top >
-          <header className="flex h-[8rem] w-[28rem] justify-center items-center">
-            <img src={logo} className="logo" alt="Logo"/>
+          <header className="flex h-[8rem] w-[26rem] justify-center items-center">
+            <img src={logo} className="logo" alt="Logo" width='210px' />
           </header>
         </Fade>
         
@@ -55,7 +55,7 @@ const Landing = () => {
                   </div>
                   <div className="flex gap-[2rem]">
                     <button className="w-[14rem] h-[3rem] bg-[#F54749] text-[#FFFFFF] rounded-[34px]">
-                      <Link to='/signup'>Register your resto</Link>
+                      <Link to='/register'>Register your resto</Link>
                     </button>
                     <button className="w-[14rem] h-[3rem] border-2 text-[#F54749] border-red-500 rounded-[34px]">
                       <Link to='/login'>Sign in to your resto</Link>
