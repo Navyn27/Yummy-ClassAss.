@@ -1,8 +1,22 @@
-import React from 'react'
+import React, { useState } from 'react'
 import logo  from '../../assets/yummy.png'
 import Svg from './AddSvg'
-import { TextField } from '@mui/material'
+import InputFiled from './InputFiled'
+
 function AddClient() {
+  const inputCredentials1 = [{label: 'Client name'}, {label: 'Category'}, {label: 'Representative'}, {label: 'Date of birth'}]
+  const inputCredentials2 = [{label: 'Adress'}, {label: 'Email'}, {label: 'Phone'}, {label: 'Bank account'}]
+
+  const inputfields1 = inputCredentials1.map((inputCredential, index)=>{
+    return <InputFiled key={index} label={inputCredential.label} />
+  })
+
+  const inputfields2 = inputCredentials2.map((inputCredential, index)=>{
+    return <InputFiled key={index} label={inputCredential.label} />
+  })
+
+  const [swap, setSwap] = useState(false)
+
   return (
     <div className='w-screen h-screen  grid place-items-center bg-[#eeeeee]'>
       <div className='w-[60%] h-[75%] bg-[#f7f6f6] flex '>
@@ -15,26 +29,17 @@ function AddClient() {
             </div>
           </div>
 
-          <div className='w-[60%] h-full flex flex-col items-center justify-center'>
+          <div className='w-[60%] h-full flex flex-col items-center justify-center' >
             <h1 className='text-2xl font-bold text-myred'>Add your client</h1>
-            <div className='w-[60%] h-[60%] flex flex-col items-center justify-center gap-[2rem]'>
-              <div className='w-[23rem] h-[4rem] '>  
-                <TextField label='Client Name' id="outlined-basic" fullWidth />
+            <div className='w-[70%] h-[60%] flex items-center justify-center gap-[25rem] pl-[27rem] overflow-hidden' style={{flexDirection: swap === true ? 'row-reverse' : 'row'}}>
+              <div className='w-[60%] h-full flex flex-col items-center justify-center gap-[2rem] transition-all duration-500'>
+                {inputfields1}
               </div>
-
-              <div className='w-[23rem] h-[4rem] '>
-                <TextField label='Category' id="outlined-basic" fullWidth />
-              </div>
-
-              <div className='w-[23rem] h-[4rem] '>
-                <TextField label='Representative' id="outlined-basic" fullWidth />
-              </div>
-
-              <div className='w-[23rem] h-[4rem] '>
-                <TextField label='Date of birth' id="outlined-basic" fullWidth />
+              <div className='w-[60%] h-full flex flex-col items-center justify-center gap-[2rem] transition-all duration-500'>
+                {inputfields2}
               </div>
             </div>
-            <button className='px-[10rem] py-[1rem] rounded-[.2rem]  bg-myred text-[white] font-bold'>Next</button>
+            <button className='px-[10.5rem] py-[1rem] rounded-[.2rem]  bg-myred text-[white] font-bold' onClick={()=>setSwap(true)}>Next</button>
           </div>
       </div>
     </div>
