@@ -9,6 +9,7 @@ import Profile from "./components/Profile";
 import Landing from "./components/Landing";
 import Signup from './components/SignUps/Signup'
 import Login from './components/SignUps/Login'
+import AddClient from './components/SignUps/AddClient'
 import PageNotFound from './components/SignUps/PageNotFound'
 import logo from './assets/yummy.png'
 import { useState, useEffect } from 'react'
@@ -50,6 +51,7 @@ function App() {
         <Route path="/register" exact element={<Signup />} />
         <Route path='/login' element={<Login />} />
         <Route  path='*' element={<PageNotFound />} />
+        <Route path='/addClient' element={<AddClient />} />
       </Routes>
     }
     </div>

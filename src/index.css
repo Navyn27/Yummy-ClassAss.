@@ -26,20 +26,10 @@ body {
 .SidebarComponent:hover div {
   color: black;
   transition: 0.2s ease-in;
-  padding: 1px;
 }
 .SidebarComponent:hover {
   background: white;
   transition: 0.2s ease-in-out;
   padding: 1rem;
   cursor: pointer;
-}
-
-@keyframes logo-animed {
-  from {
-    width: 0px
-  }
-  to{
-    width: 300px
-  }
 }
