@@ -40,19 +40,24 @@ function Login() {
                 {inputfields1}
                 <div className='w-full h-[10%] flex items-center justify-between'>
                   <div className='flex items-center justify-center gap-2'>
-                  <div className='flex items-center justify-center w-fit h-fit border ' onClick={()=>setRemember(()=>{return !remember})} >
-                      <BsCheck className={`text-[${remember && 'white'}] bg-${remember ? 'myred' : '[white]' }`} onClick={()=>setRemember(()=>{return !remember})} style={{display: !remember && 'none'}} />
+                  <div className={`flex items-center justify-center w-[1rem] h-[1rem] border bg-${remember ? 'myred' : '[white]' } border-[${!remember ? 'black' : null}]`} onClick={()=>setRemember(()=>{return !remember})} >
+                      <BsCheck className='text-[white]'/>
                   </div>
                     <b className='text-xs'>Remember me</b>
                   </div>
-                  <Link to='/resetPassword' className='text-myred text-xs'>forgot password ?</Link>
+                  <Link to='/resetPassword' className='text-myred text-xs font-bold'>forgot password ?</Link>
                 </div>
               </div>
             </div>
             
             <div className='w-fit h-fit flex flex-col items-center justify-center gap-[1rem]'>
               <ButtonSignUp content='Login' setSwap={setSwap} swap={swap} />
-              <h1>Don't have an account? <Link to='/register' className='text-myred' >Sign up</Link></h1>
+              <h1>Don't have an account? <Link to='/register' className='text-myred font-bold' >Sign up</Link></h1>
+              <div className='w-full h-[4rem] flex flex-col items-center justify-center'>
+                <span>or</span>
+                <Link to='/signin' className='text-myred font-semibold text-[.9rem] underline'>sign in with google</Link>
+
+              </div>
             </div>
           </div>
       </div>

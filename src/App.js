@@ -14,6 +14,8 @@ import PageNotFound from './components/SignUps/PageNotFound'
 import logo from './assets/yummy.png'
 import { useState, useEffect } from 'react'
 import Fade from 'react-reveal/Fade'
+import ResetPassword from './components/SignUps/resetPassword'
+
 function App() {
 
   const [loading, setLoading] = useState(false)
@@ -52,6 +54,7 @@ function App() {
         <Route path='/login' element={<Login />} />
         <Route  path='*' element={<PageNotFound />} />
         <Route path='/addClient' element={<AddClient />} />
+        <Route path='/resetPassword' element={<ResetPassword />} />
       </Routes>
     }
     </div>

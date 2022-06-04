@@ -46,7 +46,7 @@ function AddClient() {
                 {inputfields2}
               </div>
             </div>
-            <div className='w-fit h-fit flex flex-col items-center justify-center gap-[1rem]'>
+            <div className='flex flex-col items-center justify-center gap-[1rem]'>
               {buttons}
             </div>
           </div>
