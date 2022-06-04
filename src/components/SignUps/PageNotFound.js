@@ -13,7 +13,7 @@ function PageNotFound() {
           <b className='font-black text-xl'>The page you are looking for is not available</b>
           <h2 className='font-bold'>However, You may want to go back to the homepage</h2>
         </div>
-        <button className='py-[.75rem] px-[4rem] bg-[#ff8800] text-white rounded-[2rem] '><Link to='/'>Go back</Link> </button>
+        <Link to='/'><button className='py-[.75rem] px-[4rem] bg-[#ff8800] text-white rounded-[2rem] '>Go back </button></Link>
       </div>
     </div>
   )

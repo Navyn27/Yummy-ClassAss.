@@ -27,7 +27,7 @@ function App() {
   }, [])
 
 
-  const subRoutesData = [{name: 'dashboard', element: <Main />}, {name: 'orders', element: <Main2 />}, {name: 'overview', element: <ClientsOverview />}, {name: 'menu', element: <Menu />}, {name: 'profile', element: <Profile />},]
+  const subRoutesData = [{name: 'dashboard', element: <Main />}, {name: 'orders', element: <Main2 />}, {name: 'overview', element: <ClientsOverview />}, {name: 'menu', element: <Menu />}, {name: 'profile', element: <Profile />}]
 
   const subRoutes = subRoutesData.map((subroute, index)=>{
     return <Route key={index} path={subroute.name} element={subroute.element} />

@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import logo  from '../../assets/yummy.png'
 import Svg from './AddSvg'
+import ButtonSignUp from './ButtonSignUp'
 import InputFiled from './InputFiled'
 
 function AddClient() {
@@ -15,7 +16,13 @@ function AddClient() {
     return <InputFiled key={index} label={inputCredential.label} />
   })
 
+  const buttonContents = [{content: 'Next'}, {content: 'Previous'}, {content: 'register'}]
+
   const [swap, setSwap] = useState(false)
+
+  const buttons = buttonContents.map((button, index)=>{
+    return <ButtonSignUp key={index} content={button.content} setSwap={setSwap} swap={swap} />
+  })
 
   return (
     <div className='w-screen h-screen  grid place-items-center bg-[#eeeeee]'>
@@ -39,7 +46,9 @@ function AddClient() {
                 {inputfields2}
               </div>
             </div>
-            <button className='px-[10.5rem] py-[1rem] rounded-[.2rem]  bg-myred text-[white] font-bold' onClick={()=>setSwap(true)}>Next</button>
+            <div className='w-fit h-fit flex flex-col items-center justify-center gap-[1rem]'>
+              {buttons}
+            </div>
           </div>
       </div>
     </div>

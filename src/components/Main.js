@@ -70,9 +70,7 @@ function Main() {
       </div>
       <div className='w-[90%] h-[100rem] flex justify-between gap-2 '>
         <div className='bg-[blue w-[70%] h-full flex flex-col items-center justify-center gap-[2rem] '>
-            <Zoom>
                 <Chart />
-            </Zoom>
             <div className='w-full h-[40rem] bg-lightBlue grid grid-cols-2 gap-x-[.5rem] place-items-center gap-y-[.5rem] '>
                 {clientCards}
             </div>

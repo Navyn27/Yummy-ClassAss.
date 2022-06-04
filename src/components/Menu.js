@@ -43,16 +43,16 @@ function Menu() {
 
   const [newOrderDatas, setNewOrder] = useState(newOrderData)
 
-    const handleClicked = (id) =>{
-        setNewOrder(prevNewOrder=>{
-            return prevNewOrder.map(order=>{
-                if(order.checked === true) {
-                    return {...order, checked: false}
-                }
-                return order.id === id ?  {...order, checked: !order.checked} : order
-            })
-        })
-    }
+  const handleClicked = (id) =>{
+      setNewOrder(prevNewOrder=>{
+          return prevNewOrder.map(order=>{
+              if(order.checked === true) {
+                  return {...order, checked: false}
+              }
+              return order.id === id ?  {...order, checked: !order.checked} : order
+          })
+      })
+  }
 
   const orders = newOrderDatas.map((newData, index)=>{
     return <NewOrder key={index} name={newData.name} checked={newData.checked} id={newData.id} handleClicked={handleClicked} />
