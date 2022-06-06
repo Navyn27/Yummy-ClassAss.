@@ -15,6 +15,7 @@ import logo from './assets/yummy.png'
 import { useState, useEffect } from 'react'
 import Fade from 'react-reveal/Fade'
 import ResetPassword from './components/SignUps/resetPassword'
+import Restaurantprofile from "./components/SignUps/Restaurantprofile";
 
 function App() {
 
@@ -55,6 +56,7 @@ function App() {
         <Route  path='*' element={<PageNotFound />} />
         <Route path='/addClient' element={<AddClient />} />
         <Route path='/resetPassword' element={<ResetPassword />} />
+        <Route path='/createProfile' element={ <Restaurantprofile /> } />
       </Routes>
     }
     </div>
