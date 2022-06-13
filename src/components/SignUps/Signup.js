@@ -3,18 +3,18 @@ import { Link } from 'react-router-dom'
 import logo  from '../../assets/yummy.png'
 import Svg from './SignupSvg'
 import ButtonSignUp from './ButtonSignUp'
-import InputFiled from './InputFiled'
+import InputField from './InputField'
 
 function Signup() {
   const inputCredentials1 = [{label: 'First name'}, {label: 'last name'}, {label: 'Email'}]
   const inputCredentials2 = [{label: 'Phone'}, {label: 'Password'}, {label: 'Confirm password'}]
 
   const inputfields1 = inputCredentials1.map((inputCredential, index)=>{
-    return <InputFiled key={index} label={inputCredential.label} />
+    return <InputField key={index} label={inputCredential.label} />
   })
 
   const inputfields2 = inputCredentials2.map((inputCredential, index)=>{
-    return <InputFiled key={index} label={inputCredential.label} />
+    return <InputField key={index} label={inputCredential.label} />
   })
 
   const buttonContents = [{content: 'Next'}, {content: 'Previous'}, {content: 'Sign up'}]

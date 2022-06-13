@@ -3,14 +3,14 @@ import { Link } from 'react-router-dom'
 import logo  from '../../assets/yummy.png'
 import Svg from './SignupSvg'
 import ButtonSignUp from './ButtonSignUp'
-import InputFiled from './InputFiled'
+import InputField from './InputField'
 import { BsCheck } from 'react-icons/bs'
 
 function Login() {
   const inputCredentials1 = [{label: 'Email'}, {label: 'Phone'}, {label: 'Password'}]
 
   const inputfields1 = inputCredentials1.map((inputCredential, index)=>{
-    return <InputFiled key={index} label={inputCredential.label} />
+    return <InputField key={index} label={inputCredential.label} />
   })
 
   const [swap, setSwap] = useState(false)

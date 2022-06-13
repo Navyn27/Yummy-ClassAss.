@@ -20,7 +20,7 @@ import Restaurantprofile from "./components/SignUps/Restaurantprofile";
 function App() {
 
   const [loading, setLoading] = useState(false)
-
+  
   useEffect(()=>{
     setLoading(true)
 
