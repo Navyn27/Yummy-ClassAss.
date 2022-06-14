@@ -5,8 +5,7 @@ import Svg from './SignupSvg'
 import ButtonSignUp from './ButtonSignUp'
 import InputField from './InputField'
 import { BsCheck } from 'react-icons/bs'
-import { TextField } from '@mui/material'
-import { type } from '@testing-library/user-event/dist/type'
+
 function Login() { 
   const [remember, setRemember] = useState(false)
 
@@ -54,18 +53,12 @@ function Login() {
               
               <div className='w-[75%] h-[45%] flex items-center justify-center gap-[25rem] overflow-hidden' >
                   <div className='w-[80%] h-full flex flex-col items-center justify-center gap-[1rem] transition-all duration-500' >
-                    <div className='w-[23rem] h-[4rem]'>
-                      <TextField label='Email' id="outlined-basic" fullWidth name='email' onChange={ handleChange } value={ formData.email } />
-                    </div>
+                      <InputField label='Email'  name='email' onChange={ handleChange } value={ formData.email } />
 
-                    <div className='w-[23rem] h-[4rem]'>
-                      <TextField label='Phone' type='number' inputProps={ { maxLength: 10 } } id="outlined-basic" fullWidth name='phone' onChange={ handleChange } value={ formData.phone } />
-                    </div>
+                      <InputField label='Phone' type='number'  name='phone' onChange={ handleChange } value={ formData.phone } />
 
-                    <div className='w-[23rem] h-[4rem]'>
-                      <TextField label='Password' type='password'  id="outlined-basic" fullWidth name='password' onChange={ handleChange } value={ formData.password } />
-                    </div>
-                    
+                      <InputField label='Password' type='password'   name='password' onChange={ handleChange } value={ formData.password } />
+                                        
                     <div className='w-[25rem] h-[10%] flex justify-between items-center '>
                       <div className='w-[10rem] h-[2rem] flex items-center justify-center gap-2'>
                           <input type='checkbox' checked={ formData.rememberMe } id='rememberMe' onChange={handleChange} name='rememberMe' className='opacity-0' />
