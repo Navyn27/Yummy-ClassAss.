@@ -11,20 +11,24 @@ function ResetPassword() {
     username: ''
   })
 
+  const [errors, setErrors] = useState(false)
+
   function handleChange(e){ 
     e.preventDefault()
+
+    setErrors(false)
+    if(formData.email === '' ){
+      setErrors(true)
+    }
+
     const { value, name } = e.target
-      setformData(prevFormData=>{ 
+
+      setformData(prevFormData=>{
       return { 
         ...prevFormData,
         [name]: value
       }
     })
-  }
-
-  const handleSubmit = (e) =>{ 
-    e.preventDefault()
-    console.log(formData)
   }
 
   return (
@@ -40,13 +44,13 @@ function ResetPassword() {
           </div>
 
 
-            <form action="" className='w-[55%] h-full flex flex-col items-center justify-center' onSubmit={handleSubmit}>
+            <form action="" className='w-[55%] h-full flex flex-col items-center justify-center' onSubmit={handleChange}>
               <div className='flex flex-col items-center justify-center gap-[1rem]'>
               <h1 className='text-2xl font-bold text-myred'>Reset your account's password</h1>
               </div>
               
               <div className='w-[75%] h-[30%] flex flex-col items-center justify-center gap-[1rem] transition-all duration-500'>
-                <InputField label='Email' type='email'  name='email' handleChange={ handleChange } value={ formData.email } />
+                <InputField label='Email' type='email'  name='email' handleChange={ handleChange } value={ formData.email } error={ errors.email }  />
                 <InputField label='Username' type='text'  name='username' handleChange={ handleChange } value={ formData.username } />
               </div>
               
