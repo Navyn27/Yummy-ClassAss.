@@ -6,37 +6,38 @@ import ButtonSignUp from './ButtonSignUp'
 import InputField from './InputField'
 import { BsCheck } from 'react-icons/bs'
 import { TextField } from '@mui/material'
-function Login() {
+import { type } from '@testing-library/user-event/dist/type'
+function Login() { 
   const [remember, setRemember] = useState(false)
 
-  const [formData, setformData] = useState({
+  const [formData, setformData] = useState({ 
     email: '',
-    phone: '',
-    password: ''
+    phone: 0,
+    password: '',
+    rememberMe: false
   })
 
-  function handleChange(e){
+  function handleChange(e){ 
     e.preventDefault()
-    const {value, name} = e.target
-
-    setformData(prevFormData=>{
-      return {
+    const { value, name, type, checked } = e.target
+      setformData(prevFormData=>{ 
+      return { 
         ...prevFormData,
-        [name]: value
+        [name]: type === 'checkbox' ? checked : value
       }
     })
   }
 
-  const handleSubmit = (e) =>{
+  const handleSubmit = (e) =>{ 
     e.preventDefault()
-    
+    console.log(formData)
   }
 
   return (
     <div className='w-screen h-screen  grid place-items-center bg-[#eeeeee]'>
       <div className='w-[60%] h-[75%] bg-[#f7f6f6] flex '>
           <div className='w-[50%] h-full bg-myred flex flex-col items-center justify-center'>
-            <img src={logo} alt='logo' width='200px' />
+            <img src={ logo } alt='logo' width='200px' />
             <Svg />
             <div className='flex flex-col items-start justify-center mt-[2rem]'>
               <span className='text-xl font-bold text-[white]'>Sign up inorder to </span>
@@ -44,52 +45,53 @@ function Login() {
             </div>
           </div>
 
-          <div className='w-[55%] h-full flex flex-col items-center justify-center' >
-            <div className='flex flex-col items-center justify-center gap-[1rem]'>
-              <h1 className='text-xl font-bold '>Welcome back</h1>
-              <h1 className='text-2xl font-bold text-myred'>Login to your account</h1>
-            </div>
-            
-            <div className='w-[75%] h-[45%] flex items-center justify-center gap-[25rem] overflow-hidden' >
-                <form action="" className='w-[80%] h-full flex flex-col items-center justify-center gap-[1rem] transition-all duration-500' onSubmit={handleSubmit} >
-                  <div className='w-[23rem] h-[4rem]'>
-                    <TextField label='Email' id="outlined-basic" fullWidth name='email' onChange={handleChange} value={formData.email} />
-                  </div>
-
-                  <div className='w-[23rem] h-[4rem]'>
-                    <TextField label='Phone' type='number' id="outlined-basic" fullWidth name='phone' onChange={handleChange} value={formData.phone} />
-                  </div>
-
-                  <div className='w-[23rem] h-[4rem]'>
-                    <TextField label='Password'  id="outlined-basic" fullWidth name='password' onChange={handleChange} value={formData.password} />
-                  </div>
-                  
-                  <div className='w-full h-[10%] flex items-center justify-between'>
-                    <div className='flex items-center justify-center gap-2'>
-                    <div className={`flex items-center justify-center w-[1rem] h-[1rem] border bg-${remember ? 'myred' : '[white]' } border-[${!remember ? 'black' : null}]`} onClick={()=>setRemember(()=>{return !remember})} >
-                        <BsCheck className='text-[white]'/>
+          <form action="/ishi" className='w-[55%] h-full' onSubmit={ handleSubmit }>
+            <div className='w-full h-full flex flex-col items-center justify-center' >
+              <div className='flex flex-col items-center justify-center gap-[1rem]'>
+                <h1 className='text-xl font-bold '>Welcome back</h1>
+                <h1 className='text-2xl font-bold text-myred'>Login to your account</h1>
+              </div>
+              
+              <div className='w-[75%] h-[45%] flex items-center justify-center gap-[25rem] overflow-hidden' >
+                  <div className='w-[80%] h-full flex flex-col items-center justify-center gap-[1rem] transition-all duration-500' >
+                    <div className='w-[23rem] h-[4rem]'>
+                      <TextField label='Email' id="outlined-basic" fullWidth name='email' onChange={ handleChange } value={ formData.email } />
                     </div>
-                      <b className='text-xs'>Remember me</b>
+
+                    <div className='w-[23rem] h-[4rem]'>
+                      <TextField label='Phone' type='number' inputProps={ { maxLength: 10 } } id="outlined-basic" fullWidth name='phone' onChange={ handleChange } value={ formData.phone } />
                     </div>
-                    <Link to='/resetPassword' className='text-myred text-xs font-bold'>forgot password ?</Link>
+
+                    <div className='w-[23rem] h-[4rem]'>
+                      <TextField label='Password' type='password'  id="outlined-basic" fullWidth name='password' onChange={ handleChange } value={ formData.password } />
+                    </div>
+                    
+                    <div className='w-[25rem] h-[10%] flex justify-between items-center '>
+                      <div className='w-[10rem] h-[2rem] flex items-center justify-center gap-2'>
+                          <input type='checkbox' checked={ formData.rememberMe } id='rememberMe' onChange={handleChange} name='rememberMe' className='opacity-0' />
+
+                        <label htmlFor='rememberMe' onClick={ ()=>setRemember(()=>{ return !remember }) } className='text-xs absolute flex items-center justify-center gap-[.2rem]' ><BsCheck className={`text-[${remember ? 'white' : 'white'}] bg-${remember && 'myred'} border border-black`}  />Remember me</label>
+                      </div>
+                      <Link to='/resetPassword' className='text-myred text-xs font-bold'>forgot password ?</Link>
+                    </div>
                   </div>
-                </form>
-            </div>
-            
-            <div className='w-fit h-fit flex flex-col items-center justify-center gap-[1rem]'>
-              <button type='submit'  className={`px-[10rem] py-[.75rem] bg-myred text-[white] font-bold`} >
-                login
-              </button>
-              <h1>Don't have an account? <Link to='/register' className='text-myred font-bold' >Sign up</Link></h1>
-              <div className='w-full h-[4rem] flex flex-col items-center justify-center'>
-                <span>or</span>
-                <Link to='/signin' className='text-myred font-semibold text-[.9rem] underline'>sign in with google</Link>
+              </div>
+              
+              <div className='w-fit h-fit flex flex-col items-center justify-center gap-[1rem]'>
+                <button className={ `px-[10rem] py-[.75rem] bg-myred text-[white] font-bold` } >
+                  login
+                </button>
+                <h1>Don't have an account? <Link to='/register' className='text-myred font-bold' >Sign up</Link></h1>
+                <div className='w-full h-[4rem] flex flex-col items-center justify-center'>
+                  <span>or</span>
+                  <Link to='/signin' className='text-myred font-semibold text-[.9rem] underline'>sign in with google</Link>
+                </div>
               </div>
             </div>
-          </div>
+          </form>
       </div>
     </div>
   )
-}
+ }
 
 export default Login
