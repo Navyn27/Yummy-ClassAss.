@@ -1,11 +1,10 @@
 import React, { useState } from 'react'
 import logo  from '../../assets/yummy.png'
 import Svg from './AddSvg'
-import ButtonSignUp from './ButtonSignUp'
 import { TextField } from '@mui/material'
 function AddClient() {
   const [swap, setSwap] = useState(false)
-  const [textfieldsValue, setTextFieldsValue] = useState({
+  const [formData, setformData] = useState({
     clientName: '',
     category: '',
     representative: '',
@@ -16,17 +15,22 @@ function AddClient() {
     backAccount: ''
   })
 
-  function handleSubmit(e){
+  function handleChange(e){
     e.preventDefault()
-    const {value} = e.target
-    console.log(value)
+    const {value, name} = e.target
+
+    setformData(prevFormData=>{
+      return {
+        ...prevFormData,
+        [name]: value
+      }
+    })
   }
 
-  const buttonContents = [{content: 'Next', type: 'button'}, {content: 'Previous', type: 'button'}, {content: 'register', type: 'submit'}]
-
-  const buttons = buttonContents.map((button, index)=>{
-    return <ButtonSignUp key={index} content={button.content} setSwap={setSwap} handleSubmit={handleSubmit} type={button.type} swap={swap} />
-  })
+  const handleSubmit = (e) =>{
+    e.preventDefault()
+    console.log(formData)
+  }
 
   return (
 
@@ -42,41 +46,48 @@ function AddClient() {
           </div>
 
           <div className='w-[60%] h-full' >
-            <form action="" className='h-full w-full flex flex-col items-center justify-center' onSubmit={handleSubmit}>
+            <form action="/login" className='h-full w-full flex flex-col items-center justify-center' onSubmit={handleSubmit} >
               <h1 className='text-2xl font-bold text-myred'>Add your client</h1>
               <div className='w-[70%] h-[60%] flex items-center justify-center gap-[25rem] pl-[27rem] overflow-hidden' style={{flexDirection: swap === true ? 'row-reverse' : 'row'}}>
                 <div className='w-[60%] h-full flex flex-col items-center justify-center gap-[1.5rem] transition-all duration-500'>
                     <div className='w-[23rem] h-[4rem]'>
-                      <TextField label='Client name' id="outlined-basic" fullWidth name='clientName' onChange={(event)=>handleSubmit(event)} />
+                      <TextField label='Client name' id="outlined-basic" fullWidth name='clientName' onChange={handleChange} value={formData.clientName} />
                     </div>
                     <div className='w-[23rem] h-[4rem]'>
-                      <TextField label='Category' id="outlined-basic" fullWidth name='category' onChange={(event)=>handleSubmit(event)} />
+                      <TextField label='Category' id="outlined-basic" fullWidth name='category' onChange={handleChange} value={formData.category} />
                     </div>
                     <div className='w-[23rem] h-[4rem]'>
-                      <TextField label='Representative' id="outlined-basic" fullWidth name='representative' onChange={(event)=>handleSubmit(event)} />
+                      <TextField label='Representative' id="outlined-basic" fullWidth name='representative' onChange={handleChange} value={formData.representative} />
                     </div>
-                  <div className='w-[23rem] h-[4rem] '>
-                    <TextField label='Date of birth' id="outlined-basic" fullWidth name='dob' onChange={(event)=>handleSubmit(event)} />
-                  </div>
+                    <div className='w-[23rem] h-[4rem] '>
+                      <TextField label='Date of birth' id="outlined-basic" fullWidth name='dob' onChange={handleChange} value={formData.dob} />
+                    </div>
                 </div>
                 <div className='w-[60%] h-full flex flex-col items-center justify-center gap-[1.5rem] transition-all duration-500'>
                   <div className='w-[23rem] h-[4rem]'>
-                    <TextField label='Adress' id="outlined-basic" fullWidth name='adress' onChange={(event)=>handleSubmit(event)} />
+                    <TextField label='Adress' id="outlined-basic" fullWidth name='adress' onChange={handleChange} value={formData.adress} />
                   </div>
                   <div className='w-[23rem] h-[4rem]'>
-                    <TextField label='Email' id="outlined-basic" fullWidth name='email' onChange={(event)=>handleSubmit(event)} />
+                    <TextField label='Email' id="outlined-basic" fullWidth name='email' onChange={handleChange} value={formData.email} />
                   </div>
                   <div className='w-[23rem] h-[4rem]'>
-                    <TextField label='Phone' id="outlined-basic" fullWidth name='phone' onChange={(event)=>handleSubmit(event)} />
+                    <TextField label='Phone' id="outlined-basic" fullWidth name='phone' onChange={handleChange} value={formData.phone} />
                   </div>
                   <div className='w-[23rem] h-[4rem]'>
-                    <TextField label='Bank account' id="outlined-basic" fullWidth name='backAccount' onChange={(event)=>handleSubmit(event)} />
+                    <TextField label='Bank account' id="outlined-basic" fullWidth name='backAccount' onChange={handleChange} value={formData.backAccount} />
                   </div>
-
                 </div>
               </div>
               <div className='flex flex-col items-center justify-center gap-[1rem]'>
-                {buttons}
+                <button type='button'  className={`px-[10rem] py-[.75rem] bg-myred text-[white] font-bold`} style={{display: !swap ? 'none' : null }} onClick={()=>setSwap(false)}>
+                    Previous
+                </button>
+                <button type='button'  className={`px-[10rem] py-[.75rem] bg-myred text-[white] font-bold`} style={{display: swap ? 'none' : null }} onClick={()=>setSwap(true)}>
+                    Next
+                </button>
+                <button type='submit'  className={`px-[10rem] py-[.75rem] bg-myred text-[white] font-bold`} style={{display: !swap ? 'none' : null }} >
+                    Submit
+                </button>
               </div>
             </form>
           </div>
