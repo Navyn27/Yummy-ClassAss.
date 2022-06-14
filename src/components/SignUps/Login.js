@@ -1,4 +1,4 @@
-import React, { useState, useRef, useCallback } from 'react'
+import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import logo  from '../../assets/yummy.png'
 import Svg from './SignupSvg'
@@ -16,6 +16,7 @@ function Login() {
     rememberMe: false
   })
 
+  
   function handleChange(e){ 
     e.preventDefault()
     const { value, name, type, checked } = e.target
@@ -53,15 +54,15 @@ function Login() {
               
               <div className='w-[75%] h-[45%] flex items-center justify-center gap-[25rem] overflow-hidden' >
                   <div className='w-[80%] h-full flex flex-col items-center justify-center gap-[1rem] transition-all duration-500' >
-                      <InputField label='Email'  name='email' onChange={ handleChange } value={ formData.email } />
+                      <InputField label='Email'  name='email' handleChange={ handleChange } value={ formData.email } />
 
-                      <InputField label='Phone' type='number'  name='phone' onChange={ handleChange } value={ formData.phone } />
+                      <InputField label='Phone' type='number'  name='phone' handleChange={ handleChange } value={ formData.phone } />
 
-                      <InputField label='Password' type='password'   name='password' onChange={ handleChange } value={ formData.password } />
-                                        
+                      <InputField label='Password' type='password'   name='password' handleChange={ handleChange } value={ formData.password } />
+
                     <div className='w-[25rem] h-[10%] flex justify-between items-center '>
                       <div className='w-[10rem] h-[2rem] flex items-center justify-center gap-2'>
-                          <input type='checkbox' checked={ formData.rememberMe } id='rememberMe' onChange={handleChange} name='rememberMe' className='opacity-0' />
+                          <input type='checkbox' checked={ formData.rememberMe } id='rememberMe' handleChange={handleChange} name='rememberMe' className='opacity-0' />
 
                         <label htmlFor='rememberMe' onClick={ ()=>setRemember(()=>{ return !remember }) } className='text-xs absolute flex items-center justify-center gap-[.2rem]' ><BsCheck className={`text-[${remember ? 'white' : 'white'}] bg-${remember && 'myred'} border border-black`}  />Remember me</label>
                       </div>
