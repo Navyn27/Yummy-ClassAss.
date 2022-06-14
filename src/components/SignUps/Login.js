@@ -16,11 +16,11 @@ function Login() {
     rememberMe: false
   })
 
-  
+
   function handleChange(e){ 
     e.preventDefault()
     const { value, name, type, checked } = e.target
-      setformData(prevFormData=>{ 
+      setformData(prevFormData=>{
       return { 
         ...prevFormData,
         [name]: type === 'checkbox' ? checked : value
